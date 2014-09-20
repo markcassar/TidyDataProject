@@ -1,0 +1,88 @@
+Feature Selection 
+=================
+
+The descriptions of the original data and the data files themselves can be found at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
+
+In brief, the original 561 features (in features.txt) were obtained from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ captured via a Samsung smartphone via various filters, transforms, estimates, and calculations. The features are presented for 30 test subjects carrying out 6 activities. 
+
+Original data files: features.txt, labels.txt, subject_train.txt, X_train.txt, y_train.txt, subject_test.txt, X_test.txt, y_test.txt
+
+The final feature set includes 81 features that were arrived at in the following manner. 
+
+
+=================
+Variables Removed
+=================
+As we were only interested in measurements of the 'mean value' (names ending in mean() ), 'standard deviation'(names ending in std() ), or 'mean frequency' (names ending in meanFreq() ), any variable based on the following calculations were removed from the data, i.e., any variable whose name ended with one of the following: 
+
+mad(): Median absolute deviation 
+max(): Largest value in array
+min(): Smallest value in array
+sma(): Signal magnitude area
+energy(): Energy measure. Sum of the squares divided by the number of values. 
+iqr(): Interquartile range 
+entropy(): Signal entropy
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+correlation(): correlation coefficient between two signals
+maxInds(): index of the frequency component with largest magnitude
+skewness(): skewness of the frequency domain signal 
+kurtosis(): kurtosis of the frequency domain signal 
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+*angle(): Angle between to vectors 
+
+*While the angle calculations included quantities such as gravityMean, tBodyAccMean, tBodyAccJerkMean, tBodyGyroMean, tBodyGyroJerkMean, it was unclear that the resulting angle calculation was a mean (some were clearly not, such as angle(tBodyAccMean, gravity) so they were removed. 
+
+
+===============
+Variables Added 
+===============
+Activity -- character indicating which activity the measurement corresponds to: walking, walking upstairs, walking downstairs, laying, sitting, standing (from labels.txt)
+
+Subject ID -- number from 1-30 indicating which subject the measurements were taken from (from subject_train.txt and subject_test.txt)
+
+
+==========================
+Variables kept but renamed
+==========================
+The following variables on the left (XYZ representing 3 variables of the same type) were renamed to the more descriptive versions on the right, as shown below. Only the mean(), std(), and meanFreq()
+estimates for the variables were kept.  
+
+tBodyAcc-XYZ 		= 	Body Acceleration along XYZ-Axis (time-domain)
+tGravityAcc-XYZ		=	Gravity Acceleration along XYZ-Axis (time-domain)
+tBodyAccJerk-XYZ	=	Linear Body Jerk along XYZ-Axis (time-domain)
+tBodyGyro-XYZ		=	Body Angular Velocity along XYZ-Axis (time-domain)
+tBodyGyroJerk-XYZ	=	Angular Body Jerk along XYZ-Axis (time-domain)
+tBodyAccMag		=	Magnitude of Body Acceleration (time-domain)
+tGravityAccMag		=	Magnitude of Gravity Acceleration (time-domain)
+tBodyAccJerkMag		=	Magnitude of Linear Body Jerk (time-domain)
+tBodyGyroMag		=	Magnitude of Body Angular Velocity (tim-domain)
+tBodyGyroJerkMag	=	Magnitude of Angular Body Jerk (time-domain)
+fBodyAcc-XYZ		=	Body Acceleration along XYZ-Axis (frequency-domain)
+fBodyAccJerk-XYZ	=	Linear Body Jerk along XYZ-Axis (frequency-domain)
+fBodyGyro-XYZ		=	Body Angular Acceleration along XYZ-Axis (frequency-domain)
+fBodyAccMag		=	Magnitude of Body Acceleration (frequency-domain)
+fBodyBodyAccJerkMag	=	Magnitude of Linear Body-Body Jerk (frequency-domain)
+fBodyBodyGyroMag	=	Magnitude of Body-Body Angular Velocity (frequency-domain)
+fBodyGyroJerkMag	=	Magnitude of Angular Body-Body Jerk (frequency-domain)
+
+=======================
+Transformations applied
+=======================
+Multiple measurements per subject per activity per variable were condensed by calculating the mean value. So only one measurement is presented per subject per activity per variable. For example, for subject 1, only one mean value is presented for "Body Acceleration along X-Axis (time-domain)" for the activity of "Walking". As each of the multiple measurements are means over a set time period, when we take the mean of the means we end up with the standard mean as a result.  
+
+============
+Presentation
+============
+Finally the data is presented in long format where it is first organize by variable, then by activity, then by subject. In this way, one can see measurements for a single variable for the same activity across all subjects. For any given activity and variable, one would expect these values to be roughly similar across subjects. I believe this gives a fairly tidy view into the data.
+
+Activity Subject ID                                          variable     value
+1   LAYING          1 Mean Body Acceleration along X-Axis (time-domain) 0.2215982
+2   LAYING          2 Mean Body Acceleration along X-Axis (time-domain) 0.2813734
+3   LAYING          3 Mean Body Acceleration along X-Axis (time-domain) 0.2755169
+4   LAYING          4 Mean Body Acceleration along X-Axis (time-domain) 0.2635592
+5   LAYING          5 Mean Body Acceleration along X-Axis (time-domain) 0.2783343
+6   LAYING          6 Mean Body Acceleration along X-Axis (time-domain) 0.2486565
+
+
+
+
