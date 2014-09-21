@@ -1,7 +1,32 @@
 TidyDataProject
 ===============
 
-# for reading in the files, I am assuming all files are in your working directory
+Goals of the Project:
+To create one R script called run_analysis.R that does the following: 
+- Merges the training and the test sets to create one data set.
+- Extracts only the measurements on the mean and standard deviation for each measurement. 
+- Uses descriptive activity names to name the activities in the data set
+- Appropriately labels the data set with descriptive variable names. 
+- From the data set created through the previous steps, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+Files
+
+For reading in the data, it is assumed all files are in the working directory. 
+
+run_analysis.R
+code_book.txt
+new_features.txt
+Subject_train.txt
+X_train.txt
+y_train.txt
+Subject_test.txt
+X_test.txt
+y_test.txt
+
+TidyDataSet.txt
+
+original_code_book.txt
+original_README.txt
 
 # read in the feature names and the activity labels
 
