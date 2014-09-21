@@ -2,6 +2,7 @@ TidyDataProject
 ===============
 
 Goals of the Project:
+
 To create one R script called run_analysis.R that does the following: 
 - Merges the training and the test sets to create one data set.
 - Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -14,7 +15,9 @@ Files
 For reading in the data, it is assumed all files are in the working directory. 
 
 run_analysis.R
+
 code_book.txt
+
 new_features.txt
 Subject_train.txt
 X_train.txt
