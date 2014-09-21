@@ -1,7 +1,7 @@
 TidyDataProject
 ===============
 
-##Goal of the Project:
+##Goal of the Project
 
 To create one R script called run_analysis.R that does the following: 
 - Merges the training and the test sets to create one data set.
@@ -10,16 +10,16 @@ To create one R script called run_analysis.R that does the following:
 - Appropriately labels the data set with descriptive variable names. 
 - From the data set created through the previous steps, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-#Files
+##Files
 
 For reading in the data, it is assumed all files are in the working directory. 
 
-###Anlysis files
+####Anlysis files
 
 - run_analysis.R 
 - new_features.txt
 
-###Data/input files
+####Data/input files
 
 - Subject_train.txt 
 - X_train.txt 
@@ -30,13 +30,13 @@ For reading in the data, it is assumed all files are in the working directory.
 - features.txt
 - labels.txt
 
-###Output file
+####Output file
 - TidyDataSet.txt
 
-###Explanatory file
+####Explanatory file
 - code_book.txt
 
-###Original reference files
+####Original reference files
 - original_code_book.txt 
 - original_README.txt 
 - The original data files can be downloaded [here] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
@@ -45,7 +45,7 @@ For reading in the data, it is assumed all files are in the working directory.
 
 ##Usage
 
-read in the feature names and the activity labels
+The run_analysis.R code first reads in the files features.txt and lables.txt for the feature names and the activity labels
 
 read in the "test" data files, combine, and label "Subject_ID" and "Activity ID" columns
 
