@@ -12,7 +12,7 @@ To create one R script called run_analysis.R that does the following:
 
 ##Files
 
-For reading in the data, it is assumed all files are in the working directory. 
+For reading in files, it is assumed all files are in the working directory. 
 
 ####Anlysis files
 
@@ -31,7 +31,7 @@ For reading in the data, it is assumed all files are in the working directory.
 - labels.txt
 
 ####Output file
-- TidyDataSet.txt
+- TidyDataSet.txt (can be read back into R using read.table("TidyDataSet.txt", header=TRUE) )
 
 ####Explanatory file
 - code_book.txt
@@ -45,37 +45,11 @@ For reading in the data, it is assumed all files are in the working directory.
 
 ##Usage
 
-The run_analysis.R code first reads in the files features.txt and lables.txt for the feature names and the activity labels
-
-read in the "test" data files, combine, and label "Subject_ID" and "Activity ID" columns
-
-read in the "train" data files, combine, and label "Subject_ID" and "Activity ID" columns
-
- merge the combined test and train data frames
-
- use labels file to add descriptive name for each activity based on "Activity_ID"
-
- use dplyr package functionality to tidy up the data
-
- keep only required columns
-
- order by subject id and activity id 
-
- remove activity id column as it is no longer needed
-
- rearrange the order of the columns
-
- group the data by activity and subject id
-
- summarize the data so each of the variable columns is collapsed to the mean
-
- read in descriptive variable names for features
-
- rename the columns in the data frame
-
- create a long tidy data frame based on organizing the data per variable per activity per subject
-
- write tidy data set to file
-
- use line below to read file back in to R
- test <- read.table("TidyDataSet.txt", header=TRUE)
+The run_analysis.R code performs the following tasks:
+- reads in an initial set of files: features.txt, labels.txt, Subject_train.txt, X_train.txt, y_train.txt, Subject_test.txt, X_test.txt, y_test.txt
+- combines the data in the initial set of files into a single data frame 
+- removes columns that do not contain values for the mean or standard deviation 
+- attaches descriptive names to the remaining variables by reading in new_features.txt and renaming the columns
+- summarizes the data frame to produce one mean value per variable per subject per activity 
+- melts the data frame into a tidy, long data format 
+- writes the tidy data set to a file called TidyDataSet.txt 
