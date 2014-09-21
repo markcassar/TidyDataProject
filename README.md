@@ -1,7 +1,7 @@
 TidyDataProject
 ===============
 
-##Goals of the Project:
+##Goal of the Project:
 
 To create one R script called run_analysis.R that does the following: 
 - Merges the training and the test sets to create one data set.
@@ -14,18 +14,34 @@ To create one R script called run_analysis.R that does the following:
 
 For reading in the data, it is assumed all files are in the working directory. 
 
--run_analysis.R
--code_book.txt
--new_features.txt
--Subject_train.txt
--X_train.txt
--y_train.txt
--Subject_test.txt
--X_test.txt
--y_test.txt
--TidyDataSet.txt
--original_code_book.txt
--original_README.txt
+###Anlysis files
+
+- run_analysis.R 
+- new_features.txt
+
+###Data/input files
+
+- Subject_train.txt 
+- X_train.txt 
+- y_train.txt 
+- Subject_test.txt 
+- X_test.txt
+- y_test.txt
+- features.txt
+- labels.txt
+
+###Output file
+- TidyDataSet.txt
+
+###Explanatory file
+- code_book.txt
+
+###Original reference files
+- original_code_book.txt 
+- original_README.txt 
+- The original data files can be downloaded [here] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+- More information about the original data can be found [here] 
+(http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 ##Usage
 
