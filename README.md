@@ -1,7 +1,7 @@
 TidyDataProject
 ===============
 
-Goals of the Project:
+##Goals of the Project:
 
 To create one R script called run_analysis.R that does the following: 
 - Merges the training and the test sets to create one data set.
@@ -10,58 +10,56 @@ To create one R script called run_analysis.R that does the following:
 - Appropriately labels the data set with descriptive variable names. 
 - From the data set created through the previous steps, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-Files
+#Files
 
 For reading in the data, it is assumed all files are in the working directory. 
 
-run_analysis.R
+-run_analysis.R
+-code_book.txt
+-new_features.txt
+-Subject_train.txt
+-X_train.txt
+-y_train.txt
+-Subject_test.txt
+-X_test.txt
+-y_test.txt
+-TidyDataSet.txt
+-original_code_book.txt
+-original_README.txt
 
-code_book.txt
+##Usage
 
-new_features.txt
-Subject_train.txt
-X_train.txt
-y_train.txt
-Subject_test.txt
-X_test.txt
-y_test.txt
+read in the feature names and the activity labels
 
-TidyDataSet.txt
+read in the "test" data files, combine, and label "Subject_ID" and "Activity ID" columns
 
-original_code_book.txt
-original_README.txt
+read in the "train" data files, combine, and label "Subject_ID" and "Activity ID" columns
 
-# read in the feature names and the activity labels
+ merge the combined test and train data frames
 
-# read in the "test" data files, combine, and label "Subject_ID" and "Activity ID" columns
+ use labels file to add descriptive name for each activity based on "Activity_ID"
 
-# read in the "train" data files, combine, and label "Subject_ID" and "Activity ID" columns
+ use dplyr package functionality to tidy up the data
 
-# merge the combined test and train data frames
+ keep only required columns
 
-# use labels file to add descriptive name for each activity based on "Activity_ID"
+ order by subject id and activity id 
 
-# use dplyr package functionality to tidy up the data
+ remove activity id column as it is no longer needed
 
-# keep only required columns
+ rearrange the order of the columns
 
-# order by subject id and activity id 
+ group the data by activity and subject id
 
-# remove activity id column as it is no longer needed
+ summarize the data so each of the variable columns is collapsed to the mean
 
-# rearrange the order of the columns
+ read in descriptive variable names for features
 
-# group the data by activity and subject id
+ rename the columns in the data frame
 
-# summarize the data so each of the variable columns is collapsed to the mean
+ create a long tidy data frame based on organizing the data per variable per activity per subject
 
-# read in descriptive variable names for features
+ write tidy data set to file
 
-# rename the columns in the data frame
-
-# create a long tidy data frame based on organizing the data per variable per activity per subject
-
-# write tidy data set to file
-
-# use line below to read file back in to R
-# test <- read.table("TidyDataSet.txt", header=TRUE)
+ use line below to read file back in to R
+ test <- read.table("TidyDataSet.txt", header=TRUE)
