@@ -9,6 +9,8 @@ Original data files: features.txt, labels.txt, subject_train.txt, X_train.txt, y
 
 The final feature set includes 81 features that were arrived at in the following manner. 
 
+All the data were originally normalized. That has not changed, so there are no units. 
+
 
 =================
 Variables Removed
